@@ -14,7 +14,7 @@ on:
       gender:
         description: 'Gender'
         type: choice
-        options:
+        options: 
           - Male
           - Female
       married:
