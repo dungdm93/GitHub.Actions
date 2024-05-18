@@ -1,0 +1,14 @@
+name: Scheduled workflow
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '*/10 * * * *'
+
+jobs:
+  demo:
+    runs-on: ubuntu-latest
+
+    steps: 
+      - name: Log time
+        run: echo %date% %time%
