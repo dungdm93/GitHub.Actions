@@ -23,14 +23,21 @@ jobs:
         run: npm run build
 
       - name: Upload Build Artifacts
-        uses: actions/upload123-artifact@v4
+        uses: actions/upload-artifact@v4
         with:
           name: build-artifact
           path: dist
           
+  job2:
+    runs-on: ubuntu-latest
+    
+    steps: 
+      - name: Test
+        run: echo "test step"
+        
   deploy-angular:
     runs-on: ubuntu-latest
-    needs: build-angular
+    needs: [build-angular, job2]
     steps: 
       - name: Test
         run: echo "test step"
