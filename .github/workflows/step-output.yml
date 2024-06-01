@@ -7,7 +7,9 @@ on:
 jobs:
  job1:
   runs-on: ubuntu-latest
-
+  outputs:
+    name: ${{ steps.set-output.outputs.name }}
+    age: ${{ steps.set-output.outputs.age }}
   steps:
     - name: set output
       id: set-output
