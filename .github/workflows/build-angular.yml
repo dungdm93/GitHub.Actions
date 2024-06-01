@@ -43,5 +43,9 @@ jobs:
        - job2
     steps: 
       - name: Test
-        run: echo "test step"
+        id: test
+        run: echo "name='test step'" >> $GITHUB_OUTPUT  
+
+      - name: Test2
+        run: echo ${{ steps.test.outputs.name }}
   
