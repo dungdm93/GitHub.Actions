@@ -16,11 +16,11 @@ jobs:
         run: echo "name=InterviewPro" >> $GITHUB_OUTPUT
 
       - name: access output
-        run: echo "value of name is ${{steps.set-output.outputs.name}}
+        run: echo "value of name is ${{steps.set-output.outputs.name}}"
 
   job2:
     runs-on: ubuntu-latest
 
     steps:
      - name: access output
-       run: echo "value of name is ${{steps.set-output.outputs.name}}
+       run: echo "value of name is ${{steps.set-output.outputs.name}}"
