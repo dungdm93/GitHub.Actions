@@ -13,10 +13,14 @@ jobs:
     steps:
       - name: set output
         id: set-output
-        run: echo "name=InterviewPro" >> $GITHUB_OUTPUT
+        run: |
+          echo "name=InterviewPro" >> $GITHUB_OUTPUT
+          echo "age=12" >> $GITHUB_ENV
 
       - name: access output
-        run: echo "value of name is ${{steps.set-output.outputs.name}}"
+        run: |
+          echo "value of name is ${{steps.set-output.outputs.name}}"
+          echo "age is $age"
 
   job2:
     runs-on: ubuntu-latest
