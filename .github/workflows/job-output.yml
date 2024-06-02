@@ -20,7 +20,7 @@ jobs:
       - name: access output
         run: |
           echo "value of name is ${{steps.set-output.outputs.name}}"
-          echo "age is ${{ env:age }}"
+          echo "age is $env:age "
 
   job2:
     runs-on: ubuntu-latest
