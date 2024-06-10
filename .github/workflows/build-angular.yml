@@ -2,7 +2,7 @@ name: Build Angular App
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main, TEST* ]
 
 jobs:
   build-angular:
@@ -48,4 +48,13 @@ jobs:
 
       - name: Test2
         run: echo ${{ steps.test.outputs.name }}
+
+      - name: Download Artifacts 
+        uses: actions/download-artifact@v4
+        with:
+          name: build-artifact
+          path: artifacts
+
+      - name: Display structure of downloaded files
+        run: ls -R artifacts
   
