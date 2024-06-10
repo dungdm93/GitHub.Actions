@@ -4,15 +4,18 @@ on:
   push:
     branches: [ main ]
 
+env:
+ CHANNEL_NAME: InterviewPro
+ 
 jobs:
   demo:
     runs-on: ubuntu-latest
 
     steps: 
       - name: Greetings
-        run: echo "Hello, InterviewPro!"
+        run: echo "Hello, ${{ env.CHANNEL_NAME }}!"
 
-      - name: Get comments on InterviewPro
+      - name: Get comments on  ${{ env.CHANNEL_NAME }}
         run: |
           #HTTPS /api/comments
           echo "Awesome!!"
