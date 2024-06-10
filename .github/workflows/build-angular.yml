@@ -55,6 +55,12 @@ jobs:
           name: build-artifact
           path: artifacts
 
+      - name: Download Artifacts again
+        uses: actions/download-artifact@v4
+        with:
+          name: build-artifact
+          path: artifacts
+          
       - name: Display structure of downloaded files
         run: ls -R artifacts
   
