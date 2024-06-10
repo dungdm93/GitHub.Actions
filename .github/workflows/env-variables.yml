@@ -12,9 +12,9 @@ jobs:
       - name: Greetings
         env:
           CHANNEL_NAME: InterviewPro
-        run: echo "Hello, ${{ env.CHANNEL_NAME }}!"
+        run: echo "Hello, $CHANNEL_NAME !"
 
-      - name: Get comments on  ${{ env.CHANNEL_NAME }}
+      - name: Get comments on  $CHANNEL_NAME
         run: |
           #HTTPS /api/comments
           echo "Awesome!!"
