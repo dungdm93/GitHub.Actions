@@ -15,9 +15,8 @@ jobs:
       - name: Greetings
         run: echo "Hello, $CHANNEL_NAME !"
 
-      - name: Get comments on  $CHANNEL_NAME
-        run: |
-          #HTTPS /api/comments
-          echo "Awesome!!"
-          echo "Great content"
-          echo "Thank you for sharing."
+      - name: Set env variables programmatically
+        run: echo "COUNT=100000" >> $GITHUB_ENV
+
+      - name: Access env variable
+        run: echo ${{ env.COUNT }}
