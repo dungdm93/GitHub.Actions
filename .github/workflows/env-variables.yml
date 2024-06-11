@@ -19,5 +19,5 @@ jobs:
         run: echo ${{ vars.USERNAME }}
         
       - name: Access repository secret
-        run: echo ${{ secrets.USERNAME }}
+        run: echo ${{ secrets.PASSWORD }}
 
