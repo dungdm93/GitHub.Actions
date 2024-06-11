@@ -20,4 +20,12 @@ jobs:
           echo "Awesome!!"
           echo "Great content"
           echo "Thank you for sharing."
-        
+
+      - name: Set env variable programmatically
+        run: echo "COUNT=100000" >> $GITHUB_ENV
+
+      - name: Access env variable
+        run: |
+          echo $COUNT
+          echo $env:COUNT
+          echo ${{ env.COUNT }}
