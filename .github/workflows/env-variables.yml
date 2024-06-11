@@ -3,15 +3,16 @@ name: Environment Variables
 on:
   push:
     branches: [ main ]
- 
+
+env:
+  CHANNEL_NAME: InterviewPro
+          
 jobs:
   job1:
     runs-on: ubuntu-latest
      
     steps: 
       - name: Greetings
-        env:
-          CHANNEL_NAME: InterviewPro
         run: echo "Hello, $CHANNEL_NAME !"
 
       - name: Get comments on  $CHANNEL_NAME
