@@ -13,5 +13,8 @@ jobs:
     steps:
       - name: test
         run: |
-          echo $GITHUB_REF
+          echo ${{ env.GITHUB_REF }}
           echo ${{ github.ref }}
+
+          echo "GITHUB_WORKFLOW - ${{ env.GITHUB_WORKFLOW }}"
+          echo "GITHUB_WORKFLOW - ${{ github.workflow }}"
