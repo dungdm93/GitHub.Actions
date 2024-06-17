@@ -11,10 +11,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: test
+      - name: GitHub
         run: |
-          echo ${{ env.GITHUB_REF }}
-          echo ${{ github.ref }}
+          echo "GITHUB_REF - $GITHUB_REF - ${{ github.ref }}"
+          echo "GITHUB_WORKFLOW - $GITHUB_WORKFLOW -  ${{ github.workflow }}"
+          echo "GITHUB_RUN_ID - $GITHUB_RUN_ID - ${{ github.run_id }}"
+          echo "GITHUB_RUN_NUMBER - $GITHUB_RUN_NUMBER - ${{ github.run_number }}"
+          echo "GITHUB_REPOSITORY - $GITHUB_REPOSITORY - ${{ github.repository }}"
+          echo "GITHUB_EVENT_NAME - $GITHUB_EVENT_NAME - ${{ github.event_name }}"
 
-          echo "GITHUB_WORKFLOW - ${{ env.GITHUB_WORKFLOW }}"
-          echo "GITHUB_WORKFLOW - ${{ github.workflow }}"
+     - name: Runner
+       run: |
+         echo "RUNNER_NAME - $RUNNER_NAME - ${{ runner.name }}
+         echo "RUNNER_OS - $RUNNER_OS - ${{ runner.os }}
+         echo "RUNNER_ARCH - $RUNNER_ARCH - ${{ runner.arch }}
+         echo "RUNNER_TEMP - $RUNNER_TEMP - ${{ runner.temp }}
