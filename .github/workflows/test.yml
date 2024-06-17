@@ -1,0 +1,17 @@
+name: TEST
+
+on:
+  push: 
+    branches: main
+
+  workflow_dispatch:
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: test
+        run: |
+          echo $GITHUB_REF
+          echo ${{ github.ref }}
