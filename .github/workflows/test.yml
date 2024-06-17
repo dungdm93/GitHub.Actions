@@ -19,6 +19,7 @@ jobs:
           echo "GITHUB_RUN_NUMBER - $GITHUB_RUN_NUMBER - ${{ github.run_number }}"
           echo "GITHUB_REPOSITORY - $GITHUB_REPOSITORY - ${{ github.repository }}"
           echo "GITHUB_EVENT_NAME - $GITHUB_EVENT_NAME - ${{ github.event_name }}"
+          echo "GITHUB_RUN_ATTEMPT - $GITHUB_RUN_ATTEMPT - ${{ github.run_attempt }}"
 
       - name: Runner
         run: |
