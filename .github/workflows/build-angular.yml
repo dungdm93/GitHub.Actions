@@ -2,7 +2,7 @@ name: Build Angular App
 
 on:
   push:
-    branches: [ main, TEST* ]
+    branches: [ main ]
 
 jobs:
   build-angular:
@@ -27,40 +27,3 @@ jobs:
         with:
           name: build-artifact
           path: dist
-          
-  job2:
-    runs-on: ubuntu-latest
-    
-    steps: 
-      - name: Test
-        run: echo "test step"
-        
-  deploy-angular:
-    runs-on: ubuntu-latest
-    if: ${{ always() }}
-    needs: 
-       - build-angular
-       - job2
-    steps: 
-      - name: Test
-        id: test
-        run: echo "name='test step'" >> $GITHUB_OUTPUT  
-
-      - name: Test2
-        run: echo ${{ steps.test.outputs.name }}
-
-      - name: Download Artifacts 
-        uses: actions/download-artifact@v4
-        with:
-          name: build-artifact
-          path: artifacts
-
-      - name: Download Artifacts again
-        uses: actions/download-artifact@v4
-        with:
-          name: build-artifact
-          path: artifacts
-          
-      - name: Display structure of downloaded files
-        run: ls -R artifacts
-  
