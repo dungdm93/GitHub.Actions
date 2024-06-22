@@ -1,9 +1,6 @@
 name: Built-in variables
  
 on:
-  push: 
-    branches: main
-
   workflow_dispatch:
 
 jobs:
@@ -11,6 +8,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Downlaod artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: my-artifact
+          path: artifacts
+          run-id: 9627263404
+          
       - name: GitHub
         run: |
           echo "GITHUB_REF - $GITHUB_REF - ${{ github.ref }}"
