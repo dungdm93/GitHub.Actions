@@ -13,7 +13,7 @@ jobs:
         with:
           name: build-artifact
           path: artifacts
-          github_token: ${{ github.token }}
+          github-token: ${{ github.token }}
           repository: ${{ github.repository }}
           run-id: 9627432435
           
