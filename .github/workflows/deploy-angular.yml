@@ -1,7 +1,7 @@
 name: Deploy Angular App
 
 on:
-  workflow_dispatch: 
+  workflow_dispatch:
 
 jobs:
   deploy-angular:
@@ -9,14 +9,13 @@ jobs:
     
     steps:
       - name: Download Artifact
-        uses: dawidd6/action-download-artifact@v6
+        uses: actions/download-artifact@v4
         with:
           name: build-artifact
           path: artifact
-          workflow: build-angular.yml
-          github_token: ${{ github.token }}
-          repo: ${{ github.repository }}
-          run_number: 22
+          github-token: ${{ github.token }}
+          repository: ${{ github.repository }}
+          run-id: 9627516506
 
       - name: Display structure of downloaded files
         run: ls -R artifact
