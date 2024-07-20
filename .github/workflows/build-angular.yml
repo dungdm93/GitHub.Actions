@@ -4,6 +4,10 @@ on:
   push:
     branches: [ main ]
   workflow_dispatch:
+
+concurrency:
+  group: ci-${{ github.workflow }}
+  cancel-in-progress: false
   
 jobs:
   build-angular:
