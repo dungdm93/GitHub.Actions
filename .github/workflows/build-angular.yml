@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     concurrency:
      group: ci-${{ github.workflow }}
-     cancel-in-progress: false
+     cancel-in-progress: true
      
     steps: 
       - uses: actions/checkout@v4
@@ -41,8 +41,8 @@ jobs:
 
     concurrency:
      group: cd-${{ github.workflow }}
-     cancel-in-progress: false
+     cancel-in-progress: true
      
     steps: 
       - name: Sleep
-        run: sleep 10
+        run: sleep 60
