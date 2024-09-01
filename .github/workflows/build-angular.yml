@@ -15,9 +15,19 @@ jobs:
     steps: 
       - uses: actions/checkout@v4
       
-      - name: Install Python and Node JS
-        uses: InterviewProOrg/InstallPythonNodeJsAction@main     
-         
+      - name: Setup Build Environemnt
+        id: setup-build-env
+        uses: InterviewProOrg/SetupBuildEnvironment@v1
+        with:
+          pythonVersion: 3.10
+          nodejsVersion: 18.20.4
+
+      - name: Outputs from action
+        run: |
+          echo "Repository owner = ${{steps.setup-build-env.outputs.repoOwner }}
+          echo "Default Branch = ${{steps.setup-build-env.outputs.defaultBranch }}
+          echo "CI CD Key = ${{steps.setup-build-env.outputs.cicdKey }}
+          
       - name: Install dependencies
         run: npm install
 
