@@ -17,7 +17,7 @@ jobs:
       
       - name: Setup Build Environemnt
         id: setup-build-env
-        uses: InterviewProOrg/SetupBuildEnvironment@v1
+        uses: InterviewProOrg/SetupBuildEnvironment@v2
         with:
           pythonVersion: 3.10
           nodejsVersion: 18.20.4
