@@ -24,9 +24,9 @@ jobs:
 
       - name: Outputs from action
         run: |
-          echo "Repository owner = ${{steps.setup-build-env.outputs.repoOwner }}
-          echo "Default Branch = ${{steps.setup-build-env.outputs.defaultBranch }}
-          echo "CI CD Key = ${{steps.setup-build-env.outputs.cicdKey }}
+          echo "Repository owner = ${{steps.setup-build-env.outputs.repoOwner }}"
+          echo "Default Branch = ${{steps.setup-build-env.outputs.defaultBranch }}"
+          echo "CI CD Key = ${{steps.setup-build-env.outputs.cicdKey }}"
           
       - name: Install dependencies
         run: npm install
