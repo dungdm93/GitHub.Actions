@@ -12,6 +12,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Install Python and Node JS
+        uses: InterviewProOrg/CompositeActions@main
+        
       - name: Downlaod artifact
         uses: actions/download-artifact@v4
         with:
