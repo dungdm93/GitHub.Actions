@@ -22,4 +22,6 @@ runs:
         shell: bash
         id: globals
         working-directory: ${{ github.action_path }}
-        run: ./globals.sh           
+        run: |
+          chmod +x script.sh
+          ./globals.sh           
