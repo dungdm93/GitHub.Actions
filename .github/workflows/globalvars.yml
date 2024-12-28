@@ -1,0 +1,13 @@
+name: Set Global Variables
+
+on:
+   workflow_dispatch:
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Set Global Variables
+        uses: ./.github/actions/SetGlobalVariables
+        
