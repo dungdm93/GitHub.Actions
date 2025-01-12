@@ -7,7 +7,7 @@ on:
      
 jobs:
   build-deploy:
-    uses: InterviewProOrg/BuildDeployAngular/.github/workflows/reusable-build-deploy-angular.yml@main
+    uses: InterviewProOrg/BuildDeployAngular/.github/workflows/reusable-build-deploy-angular.yml@main 
     with:
       pythonVersion: 3.10
       nodejsVersion: 18.20.4
