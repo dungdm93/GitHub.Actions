@@ -14,7 +14,7 @@ jobs:
   STAGE:
     runs-on: ubuntu-latest
     environment: Stage
-    needs: DEV
+  
     steps:
       - name: Deploy
         run: echo "Deployed to Stage"      
@@ -22,7 +22,7 @@ jobs:
   PROD:
     runs-on: ubuntu-latest
     environment: Prod
-    needs: STAGE
+
     steps:
       - name: Deploy
         run: echo "Deployed to Prod"    
