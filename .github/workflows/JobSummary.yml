@@ -11,3 +11,23 @@ jobs:
     steps:
       - name: Add content to job summary
         run: echo "✅ Job completed successfully!" >> $GITHUB_STEP_SUMMARY
+
+      - name: Add markdown to summary
+        run: |
+          echo "### ✅ Test Results" >> $GITHUB_STEP_SUMMARY
+          echo "- Passed: 23" >> $GITHUB_STEP_SUMMARY
+          echo "- Failed: 2" >> $GITHUB_STEP_SUMMARY
+          echo "[View Full Report](https://example.com/report)" >> $GITHUB_STEP_SUMMARY
+
+      - name: Add test table to summary
+        run: |
+          echo "| Suite | Result | Duration |" >> $GITHUB_STEP_SUMMARY
+          echo "|-------|--------|----------|" >> $GITHUB_STEP_SUMMARY
+          echo "| Auth  | ✅ Pass | 2.1s     |" >> $GITHUB_STEP_SUMMARY
+          echo "| API   | ❌ Fail | 3.5s     |" >> $GITHUB_STEP_SUMMARY
+          echo "| UI    | ✅ Pass | 4.2s     |" >> $GITHUB_STEP_SUMMARY
+
+      - run: |
+          echo "### 🚀 Deployed to Production!" >> $GITHUB_STEP_SUMMARY
+          echo "🌐 [Check Live Site](https://myapp.com)" >> $GITHUB_STEP_SUMMARY
+
