@@ -1,0 +1,13 @@
+name: Job Summary
+
+on:
+  workflow_dispatch:
+  push:
+  
+jobs:
+  JobSummary:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Add content to job summary
+        run: echo "✅ Job completed successfully!" >> $GITHUB_STEP_SUMMARY
