@@ -9,7 +9,7 @@ on:
 
 jobs:
   Init:
-    -uses: ./.github/workflows/Init.yml
+     uses: ./.github/workflows/Init.yml
      with:
        packages: ${{ inputs.packages }}
 
