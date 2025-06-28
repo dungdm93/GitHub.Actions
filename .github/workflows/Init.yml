@@ -7,33 +7,6 @@ on:
        required: true
        type: string
 
-   outputs:
-     DEPLOY_PKG1:
-        description: "Deploy package 1"
-        value: ${{ jobs.init.outputs.deploy_pkg1 }}
-     DEPLOY_PKG2:
-        description: "Deploy pkg2"
-        value: ${{ jobs.init.outputs.deploy_pkg2 }}
-     DEPLOY_PKG3:
-        description: "Deploy pkg3"
-        value: ${{ jobs.init.outputs.deploy_pkg3 }}
-     DEPLOY_PKG4:
-        description: "Deploy pkg4"
-        value: ${{ jobs.init.outputs.deploy_pkg4 }}
-     DEPLOY_PKG5:
-        description: "Deploy pkg5"
-        value: ${{ jobs.init.outputs.deploy_pkg5 }}        
-     VERSION_PKG1:
-        value: ${{ jobs.init.outputs.version_pkg1 }} 
-     VERSION_PKG2:
-        value: ${{ jobs.init.outputs.version_pkg2 }} 
-     VERSION_PKG3:
-        value: ${{ jobs.init.outputs.version_pkg3 }} 
-     VERSION_PKG4:
-        value: ${{ jobs.init.outputs.version_pkg4 }} 
-     VERSION_PKG5:
-        value: ${{ jobs.init.outputs.version_pkg5 }} 
-        
 jobs:
   init:
     runs-on: windows-latest
