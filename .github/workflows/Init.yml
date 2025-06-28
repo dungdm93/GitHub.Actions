@@ -10,45 +10,45 @@ on:
    outputs:
      DEPLOY_PKG1:
         description: "Deploy package 1"
-        value: ${{ jobs.get-packages.outputs.deploy_pkg1 }}
+        value: ${{ jobs.init.outputs.deploy_pkg1 }}
      DEPLOY_PKG2:
         description: "Deploy pkg2"
-        value: ${{ jobs.get-packages.outputs.deploy_pkg2 }}
+        value: ${{ jobs.init.outputs.deploy_pkg2 }}
      DEPLOY_PKG3:
         description: "Deploy pkg3"
-        value: ${{ jobs.get-packages.outputs.deploy_pkg3 }}
+        value: ${{ jobs.init.outputs.deploy_pkg3 }}
      DEPLOY_PKG4:
         description: "Deploy pkg4"
-        value: ${{ jobs.get-packages.outputs.deploy_pkg4 }}
+        value: ${{ jobs.init.outputs.deploy_pkg4 }}
      DEPLOY_PKG5:
         description: "Deploy pkg5"
-        value: ${{ jobs.get-packages.outputs.deploy_pkg5 }}        
+        value: ${{ jobs.init.outputs.deploy_pkg5 }}        
      PKG1_VERSION:
-        value: ${{ jobs.get-packages.outputs.deploy_pkg1 }} 
+        value: ${{ jobs.init.outputs.deploy_pkg1 }} 
      PKG2_VERSION:
-        value: ${{ jobs.get-packages.outputs.deploy_pkg2 }} 
+        value: ${{ jobs.init.outputs.deploy_pkg2 }} 
      PKG3_VERSION:
-        value: ${{ jobs.get-packages.outputs.deploy_pkg3 }} 
+        value: ${{ jobs.init.outputs.deploy_pkg3 }} 
      PKG4_VERSION:
-        value: ${{ jobs.get-packages.outputs.deploy_pkg4 }} 
+        value: ${{ jobs.init.outputs.deploy_pkg4 }} 
      PKG5_VERSION:
-        value: ${{ jobs.get-packages.outputs.deploy_pkg5 }} 
+        value: ${{ jobs.init.outputs.deploy_pkg5 }} 
         
 jobs:
-  Init:
+  init:
     runs-on: windows-latest
 
     outputs:
-      deploy_pkg1: ${{ steps.set.outputs.deploy_pkg1 }}
-      deploy_pkg2: ${{ steps.set.outputs.deploy_pkg2 }}
-      deploy_pkg3: ${{ steps.set.outputs.deploy_pkg3 }}
-      deploy_pkg4: ${{ steps.set.outputs.deploy_pkg4 }}
-      deploy_pkg5: ${{ steps.set.outputs.deploy_pkg5 }}
-      version_pkg1: ${{ steps.set.outputs.version_pkg1 }}
-      version_pkg2: ${{ steps.set.outputs.version_pkg2 }}
-      version_pkg3: ${{ steps.set.outputs.version_pkg3 }}
-      version_pkg4: ${{ steps.set.outputs.version_pkg4 }}
-      version_pkg5: ${{ steps.set.outputs.version_pkg5 }}
+      deploy_pkg1: ${{ steps.get-packages.outputs.deploy_pkg1 }}
+      deploy_pkg2: ${{ steps.get-packages.outputs.deploy_pkg2 }}
+      deploy_pkg3: ${{ steps.get-packages.outputs.deploy_pkg3 }}
+      deploy_pkg4: ${{ steps.get-packages.outputs.deploy_pkg4 }}
+      deploy_pkg5: ${{ steps.get-packages.outputs.deploy_pkg5 }}
+      version_pkg1: ${{ steps.get-packages.outputs.version_pkg1 }}
+      version_pkg2: ${{ steps.get-packages.outputs.version_pkg2 }}
+      version_pkg3: ${{ steps.get-packages.outputs.version_pkg3 }}
+      version_pkg4: ${{ steps.get-packages.outputs.version_pkg4 }}
+      version_pkg5: ${{ steps.get-packages.outputs.version_pkg5 }}
       
     steps:
       - name: Get config file
