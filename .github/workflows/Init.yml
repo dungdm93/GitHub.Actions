@@ -90,10 +90,10 @@ jobs:
           Write-Output "deploy_pkg5=$deploy_pkg5" >> $env:GITHUB_OUTPUT
 
           Write-Output "version_pkg1=$pkg1_version" >> $env:GITHUB_OUTPUT
-          Write-Output "version_pkg1=$pkg2_version" >> $env:GITHUB_OUTPUT
-          Write-Output "version_pkg1=$pkg3_version" >> $env:GITHUB_OUTPUT
-          Write-Output "version_pkg1=$pkg4_version" >> $env:GITHUB_OUTPUT
-          Write-Output "version_pkg1=$pkg5_version" >> $env:GITHUB_OUTPUT
+          Write-Output "version_pkg2=$pkg2_version" >> $env:GITHUB_OUTPUT
+          Write-Output "version_pkg3=$pkg3_version" >> $env:GITHUB_OUTPUT
+          Write-Output "version_pkg4=$pkg4_version" >> $env:GITHUB_OUTPUT
+          Write-Output "version_pkg5=$pkg5_version" >> $env:GITHUB_OUTPUT
 
       
         
