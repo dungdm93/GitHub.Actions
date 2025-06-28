@@ -16,45 +16,45 @@ jobs:
   PKG1:
     uses: ./.github/workflows/deploy-webapp.yml
     needs: Init
-    if: ${{ needs.Init.ouputs.DEPLOY_PKG1 == 'true' }}
+    if: ${{ needs.Init.outputs.DEPLOY_PKG1 == 'true' }}
     with:
       name: "Package 1"
-      version: ${{ needs.Init.ouputs.VERSION_PKG1 }}
+      version: ${{ needs.Init.outputs.VERSION_PKG1 }}
     secrets: inherit
 
 
   PKG2:
     uses: ./.github/workflows/deploy-webapp.yml
     needs: Init
-    if: ${{ needs.Init.ouputs.DEPLOY_PKG2 == 'true' }}
+    if: ${{ needs.Init.outputs.DEPLOY_PKG2 == 'true' }}
     with:
       name: "Package 2"
-      version: ${{ needs.Init.ouputs.VERSION_PKG2 }}
+      version: ${{ needs.Init.outputs.VERSION_PKG2 }}
     secrets: inherit
 
   PKG3:
     uses: ./.github/workflows/deploy-webapp.yml
     needs: Init
-    if: ${{ needs.Init.ouputs.DEPLOY_PKG3 == 'true' }}
+    if: ${{ needs.Init.outputs.DEPLOY_PKG3 == 'true' }}
     with:
       name: "Package 3"
-      version: ${{ needs.Init.ouputs.VERSION_PKG3 }}
+      version: ${{ needs.Init.outputs.VERSION_PKG3 }}
     secrets: inherit
 
   PKG4:
     uses: ./.github/workflows/deploy-functionapp.yml
     needs: Init
-    if: ${{ needs.Init.ouputs.DEPLOY_PKG4 == 'true' }}
+    if: ${{ needs.Init.outputs.DEPLOY_PKG4 == 'true' }}
     with:
       name: "Package 4"
-      version: ${{ needs.Init.ouputs.VERSION_PKG4 }}
+      version: ${{ needs.Init.outputs.VERSION_PKG4 }}
     secrets: inherit
 
   PKG5:
     uses: ./.github/workflows/deploy-functionapp.yml
     needs: Init
-    if: ${{ needs.Init.ouputs.DEPLOY_PKG5 == 'true' }}
+    if: ${{ needs.Init.outputs.DEPLOY_PKG5 == 'true' }}
     with:
       name: "Package 5"
-      version: ${{ needs.Init.ouputs.VERSION_PKG5 }}
+      version: ${{ needs.Init.outputs.VERSION_PKG5 }}
     secrets: inherit    
