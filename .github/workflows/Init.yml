@@ -83,17 +83,17 @@ jobs:
           $pkg4_version = $packageMap['pkg4']
           $pkg5_version = $packageMap['pkg5']
 
-          Write-Output "deploy_pkg1=$deploy_pkg1" >> $GITHUB_OUTPUT
-          Write-Output "deploy_pkg2=$deploy_pkg2" >> $GITHUB_OUTPUT
-          Write-Output "deploy_pkg3=$deploy_pkg3" >> $GITHUB_OUTPUT
-          Write-Output "deploy_pkg4=$deploy_pkg4" >> $GITHUB_OUTPUT
-          Write-Output "deploy_pkg5=$deploy_pkg5" >> $GITHUB_OUTPUT
+          Write-Output "deploy_pkg1=$deploy_pkg1" >> $env:GITHUB_OUTPUT
+          Write-Output "deploy_pkg2=$deploy_pkg2" >> $env:GITHUB_OUTPUT
+          Write-Output "deploy_pkg3=$deploy_pkg3" >> $env:GITHUB_OUTPUT
+          Write-Output "deploy_pkg4=$deploy_pkg4" >> $env:GITHUB_OUTPUT
+          Write-Output "deploy_pkg5=$deploy_pkg5" >> $env:GITHUB_OUTPUT
 
-          Write-Output "pkg1_version=$pkg1_version" >> $GITHUB_OUTPUT
-          Write-Output "pkg2_version=$pkg2_version" >> $GITHUB_OUTPUT
-          Write-Output "pkg3_version=$pkg3_version" >> $GITHUB_OUTPUT
-          Write-Output "pkg4_version=$pkg4_version" >> $GITHUB_OUTPUT
-          Write-Output "pkg5_version=$pkg5_version" >> $GITHUB_OUTPUT
+          Write-Output "pkg1_version=$pkg1_version" >> $env:GITHUB_OUTPUT
+          Write-Output "pkg2_version=$pkg2_version" >> $env:GITHUB_OUTPUT
+          Write-Output "pkg3_version=$pkg3_version" >> $env:GITHUB_OUTPUT
+          Write-Output "pkg4_version=$pkg4_version" >> $env:GITHUB_OUTPUT
+          Write-Output "pkg5_version=$pkg5_version" >> $env:GITHUB_OUTPUT
 
       
         
