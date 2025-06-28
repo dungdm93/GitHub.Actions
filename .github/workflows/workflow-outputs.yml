@@ -3,7 +3,7 @@ name: Workflow Outputs
 on:
   workflow_dispatch:
     inputs:
-      pacakges:
+      packages:
         type: string
         required: true
 
