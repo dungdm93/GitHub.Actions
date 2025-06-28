@@ -1,0 +1,65 @@
+name: Init
+
+on: 
+ workflow_call:
+   inputs:
+     packages:
+       required: true
+       type: string
+
+   outputs:
+     DEPLOY_PKG1:
+        description: "Deploy package 1"
+        value: ${{ jobs.get-packages.outputs.deploy_pkg1 }}
+     DEPLOY_PKG2:
+        description: "Deploy pkg2"
+        value: ${{ jobs.get-packages.outputs.deploy_pkg2 }}
+     DEPLOY_PKG3:
+        description: "Deploy pkg3"
+        value: ${{ jobs.get-packages.outputs.deploy_pkg3 }}
+     DEPLOY_PKG4:
+        description: "Deploy pkg4"
+        value: ${{ jobs.get-packages.outputs.deploy_pkg4 }}
+     DEPLOY_PKG5:
+        description: "Deploy pkg5"
+        value: ${{ jobs.get-packages.outputs.deploy_pkg5 }}        
+
+jobs:
+  Init:
+    runs-on: windows-latest
+
+    steps:
+      - name: Get config file
+        shell: pwsh
+        run: |
+          Write-Host "Retrieving config file ..."
+
+      - name: Get pacakges to deploy
+        id: get-packages
+        shell: pwsh
+        run: |
+          $inputString = '${{ inputs.packages }}'
+          $packageMap = @{}
+
+          foreach ($pair in $inputString -split ',') {
+            $trimmed = $pair.Trim()
+            if ($trimmed -match '=') {
+              $name, $version = $trimmed -split '=', 2
+              $packageMap[$name] = $version
+            }
+          }
+
+          $deploy_pkg1 = $packageMap.ContainsKey('pkg1')
+          $deploy_pkg2 = $packageMap.ContainsKey('pkg2')
+          $deploy_pkg3 = $packageMap.ContainsKey('pkg3')
+          $deploy_pkg4 = $packageMap.ContainsKey('pkg4')
+          $deploy_pkg5 = $packageMap.ContainsKey('pkg5')
+
+          Write-Output "DEPLOY_PKG1=$deploy_pkg1" >> $GITHUB_OUTPUT
+          Write-Output "DEPLOY_PKG2=$deploy_pkg2" >> $GITHUB_OUTPUT
+          Write-Output "DEPLOY_PKG3=$deploy_pkg3" >> $GITHUB_OUTPUT
+          Write-Output "DEPLOY_PKG4=$deploy_pkg4" >> $GITHUB_OUTPUT
+          Write-Output "DEPLOY_PKG5=$deploy_pkg5" >> $GITHUB_OUTPUT
+
+      
+        
