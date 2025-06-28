@@ -1,0 +1,45 @@
+name: Workflow Outputs
+
+on:
+  workflow_dispatch:
+    inputs:
+      pacakges:
+        type: string
+        required: true
+
+jobs:
+  Init:
+    -uses: ./.github/workflows/Init.yml
+     with:
+       packages: ${{ inputs.packages }}
+
+  PKG1:
+    uses: ./.github/workflows/deploy-webapp.yml
+    with:
+      version: <version of pacakge 1 from input>
+    secrets: inherit
+
+
+  PKG2:
+    uses: ./.github/workflows/deploy-webapp.yml
+    with:
+      version: <version of pacakge 2 from input>
+    secrets: inherit
+
+  PKG3:
+    uses: ./.github/workflows/deploy-webapp.yml
+    with:
+      version: <version of pacakge 3 from input>
+    secrets: inherit
+
+  PKG4:
+    uses: ./.github/workflows/deploy-functionapp.yml
+    with:
+      version: <version of pacakge 4 from input>
+    secrets: inherit
+
+  PKG5:
+    uses: ./.github/workflows/deploy-functionapp.yml
+    with:
+      version: <version of pacakge 5 from input>
+    secrets: inherit    
