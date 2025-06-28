@@ -23,16 +23,16 @@ on:
      DEPLOY_PKG5:
         description: "Deploy pkg5"
         value: ${{ jobs.init.outputs.deploy_pkg5 }}        
-     PKG1_VERSION:
-        value: ${{ jobs.init.outputs.deploy_pkg1 }} 
-     PKG2_VERSION:
-        value: ${{ jobs.init.outputs.deploy_pkg2 }} 
-     PKG3_VERSION:
-        value: ${{ jobs.init.outputs.deploy_pkg3 }} 
-     PKG4_VERSION:
-        value: ${{ jobs.init.outputs.deploy_pkg4 }} 
-     PKG5_VERSION:
-        value: ${{ jobs.init.outputs.deploy_pkg5 }} 
+     VERSION_PKG1:
+        value: ${{ jobs.init.outputs.version_pkg1 }} 
+     VERSION_PKG2:
+        value: ${{ jobs.init.outputs.version_pkg2 }} 
+     VERSION_PKG3:
+        value: ${{ jobs.init.outputs.version_pkg3 }} 
+     VERSION_PKG4:
+        value: ${{ jobs.init.outputs.version_pkg4 }} 
+     VERSION_PKG5:
+        value: ${{ jobs.init.outputs.version_pkg5 }} 
         
 jobs:
   init:
@@ -89,11 +89,11 @@ jobs:
           Write-Output "deploy_pkg4=$deploy_pkg4" >> $env:GITHUB_OUTPUT
           Write-Output "deploy_pkg5=$deploy_pkg5" >> $env:GITHUB_OUTPUT
 
-          Write-Output "pkg1_version=$pkg1_version" >> $env:GITHUB_OUTPUT
-          Write-Output "pkg2_version=$pkg2_version" >> $env:GITHUB_OUTPUT
-          Write-Output "pkg3_version=$pkg3_version" >> $env:GITHUB_OUTPUT
-          Write-Output "pkg4_version=$pkg4_version" >> $env:GITHUB_OUTPUT
-          Write-Output "pkg5_version=$pkg5_version" >> $env:GITHUB_OUTPUT
+          Write-Output "version_pkg1=$pkg1_version" >> $env:GITHUB_OUTPUT
+          Write-Output "version_pkg1=$pkg2_version" >> $env:GITHUB_OUTPUT
+          Write-Output "version_pkg1=$pkg3_version" >> $env:GITHUB_OUTPUT
+          Write-Output "version_pkg1=$pkg4_version" >> $env:GITHUB_OUTPUT
+          Write-Output "version_pkg1=$pkg5_version" >> $env:GITHUB_OUTPUT
 
       
         
