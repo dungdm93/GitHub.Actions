@@ -15,6 +15,7 @@ jobs:
 
   PKG1:
     uses: ./.github/workflows/deploy-webapp.yml
+    needs: Init
     with:
       name: "Package 1"
       version: <version of pacakge 1 from input>
@@ -23,6 +24,7 @@ jobs:
 
   PKG2:
     uses: ./.github/workflows/deploy-webapp.yml
+    needs: Init
     with:
       name: "Package 2"
       version: <version of pacakge 2 from input>
@@ -30,6 +32,7 @@ jobs:
 
   PKG3:
     uses: ./.github/workflows/deploy-webapp.yml
+    needs: Init
     with:
       name: "Package 3"
       version: <version of pacakge 3 from input>
@@ -37,6 +40,7 @@ jobs:
 
   PKG4:
     uses: ./.github/workflows/deploy-functionapp.yml
+    needs: Init
     with:
       name: "Package 4"
       version: <version of pacakge 4 from input>
@@ -44,6 +48,7 @@ jobs:
 
   PKG5:
     uses: ./.github/workflows/deploy-functionapp.yml
+    needs: Init
     with:
       name: "Package 5"
       version: <version of pacakge 5 from input>
