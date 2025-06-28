@@ -16,6 +16,7 @@ jobs:
   PKG1:
     uses: ./.github/workflows/deploy-webapp.yml
     with:
+      name: <name of pacakge 1 from input>
       version: <version of pacakge 1 from input>
     secrets: inherit
 
@@ -23,23 +24,27 @@ jobs:
   PKG2:
     uses: ./.github/workflows/deploy-webapp.yml
     with:
+      name: <name of pacakge 2 from input>
       version: <version of pacakge 2 from input>
     secrets: inherit
 
   PKG3:
     uses: ./.github/workflows/deploy-webapp.yml
     with:
+      name: <name of pacakge 3 from input>
       version: <version of pacakge 3 from input>
     secrets: inherit
 
   PKG4:
     uses: ./.github/workflows/deploy-functionapp.yml
     with:
+      name: <name of pacakge 4 from input>
       version: <version of pacakge 4 from input>
     secrets: inherit
 
   PKG5:
     uses: ./.github/workflows/deploy-functionapp.yml
     with:
+      name: <name of pacakge 5 from input>
       version: <version of pacakge 5 from input>
     secrets: inherit    
