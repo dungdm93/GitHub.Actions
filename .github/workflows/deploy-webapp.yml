@@ -23,6 +23,7 @@ jobs:
   Dummy:
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v4
     - uses: ./.github/actions/Test/action.yml
       with:
         dummy_input_1: abc
