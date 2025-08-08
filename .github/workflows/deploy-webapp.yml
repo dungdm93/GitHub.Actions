@@ -24,7 +24,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
-    - uses: ./.github/actions/Test/action.yml
+    - uses: ./.github/actions/Test
       with:
         dummy_input_1: abc
         dummy_input_2: xyz
