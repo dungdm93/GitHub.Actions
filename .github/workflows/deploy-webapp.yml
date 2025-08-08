@@ -23,5 +23,8 @@ jobs:
   Dummy:
     runs-on: ubuntu-latest
     steps:
-    - run: echo "Hello world"
+    - uses: ./.github/actions/Test/action.yml
+      with:
+        dummy_input_1: abc
+        dummy_input_2: xyz
     needs: DeployWebApp
