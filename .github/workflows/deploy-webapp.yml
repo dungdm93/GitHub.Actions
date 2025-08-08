@@ -19,3 +19,8 @@ jobs:
       - name: Deploy Web App
         run:
           echo "Deploying web app ${{ inputs.name }} with version ${{ inputs.version }}"
+
+  Dummy:
+    runs-on: ubuntu-latest
+    steps:
+    - run: echo "Hello world"
